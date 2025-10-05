@@ -1,0 +1,241 @@
+/* Google Fonts & Root Variables */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+:root {
+    --primary-color: #00C9A7;
+    --secondary-color:#FFC107; 
+    --background-start: #845EC2; 
+    --background-end:  #D65DB1; 
+    --dark-text: #333;
+    --light-text: #fff;
+    --card-bg:#ffffff;
+    --shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    background: linear-gradient(135deg, var(--background-start), var(--background-end));
+    color: var(--dark-text);
+    min-height: 100vh;
+}
+
+#login-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 1rem;
+}
+
+.login-box {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(15px);
+    padding: 3rem;
+    border-radius: 20px;
+    text-align: center;
+    color: var(--light-text);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    max-width: 400px;
+    width: 100%;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+.login-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    color: var(--secondary-color);
+}
+
+.login-box h2 {
+    margin: 0 0 0.5rem 0;
+    font-size: 2rem;
+}
+
+.login-box p {
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.input-group i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #aaa;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 1rem 1rem 1rem 2.5rem;
+    border: none;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.9);
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+/* Main App Styles (after login) */
+#app-container {
+    background-color: #f7f9fc;
+}
+
+header {
+    background-color: var(--card-bg);
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header h3 {
+    margin: 0;
+    color: var(--background-start);
+    font-size: 1.5rem;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+main {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+main h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--dark-text);
+    margin-bottom: 2rem;
+}
+
+.event-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.event-card {
+    background-color: var(--card-bg);
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-top: 5px solid;
+}
+.event-card:nth-child(3n+1) { border-color: var(--primary-color); }
+.event-card:nth-child(3n+2) { border-color: var(--secondary-color); }
+.event-card:nth-child(3n)   { border-color: var(--background-end); }
+
+
+.event-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+.card-content {
+    padding: 1.5rem;
+}
+.card-content h3 {
+    margin-top: 0;
+    font-size: 1.4rem;
+}
+.card-content p {
+    color: #666;
+    margin: 0.5rem 0 0 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.6);
+    animation: fadeIn 0.3s;
+}
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+.modal-content {
+    background-color: var(--card-bg);
+    margin: 15% auto;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+.modal-header {
+    background: var(--background-start);
+    color: var(--light-text);
+    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.modal-header h3 { margin: 0; }
+.modal-body { padding: 1.5rem; line-height: 1.7; }
+.modal-footer {
+    padding: 1rem 1.5rem;
+    background-color: #f1f1f1;
+    text-align: right;
+}
+.close-btn { font-size: 1.5rem; cursor: pointer; font-weight: bold; }
+.close-btn:hover { color: #ddd; }
+
+.button {
+    background: var(--primary-color);
+    color: var(--light-text);
+    border: none;
+    border-radius: 30px;
+    padding: 0.8rem 2rem;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+}
+.button:hover {
+    transform: scale(1.05);
+    background: #00b395;
+}
+.login-box .button {
+    background: var(--secondary-color);
+    color: var(--dark-text);
+}
+.login-box .button:hover {
+    background: #ffb100;
+}
+.button-secondary {
+    background: #ccc;
+    color: var(--dark-text);
+}
+.button-secondary:hover {
+    background: #bbb;
+}
+

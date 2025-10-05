@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Event Management</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="login-container">
+        <div class="login-box">
+            <i class="fas fa-graduation-cap login-icon"></i>
+            <h2>Students Event Portal</h2>
+            <form id="login-form">
+                <div class="input-group">
+                    <i class="fas fa-user"></i>
+                    <input type="text" id="username" placeholder="Enter Your Name" required>
+                </div>
+                <button type="submit" class="button">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="app-container" style="display: none;">
+        <header>
+            <div class="header-content">
+                <h3><i class="fas fa-rocket"></i> Students Portal</h3>
+                <div class="user-info">
+                    <span id="welcome-user"></span>
+                    <button id="logout-btn" class="button button-secondary">Logout</button>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <h2>Upcoming Events</h2>
+            <div id="event-list" class="event-list">
+            </div>
+        </main>
+    </div>
+
+    <div id="eventModal" class="modal">
+        <div class="modal-content">
+             <div class="modal-header">
+                <h3 id="modalTitle"></h3>
+                <span class="close-btn" id="closeEventModal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <p id="modalDate"></p>
+                <p id="modalLocation"></p>
+                <p id="modalDescription"></p>
+            </div>
+            <div class="modal-footer">
+                <button id="applyBtn" class="button">Apply Now!</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
